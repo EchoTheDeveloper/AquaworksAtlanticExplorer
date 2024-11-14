@@ -16,7 +16,7 @@ namespace Aquaworks.AtlanticExplorer
         public static VehicleAssets MyVehicleAssets;
         public void Start()
         {
-            MyVehicleAssets = AssetBundleInterface.GetVehicleAssetsFromBundle("assets/atlanticexplorer", "AltanticExplorer");
+            MyVehicleAssets = AssetBundleInterface.GetVehicleAssetsFromBundle("assets/atlanticexplorer", "AtlanticExplorer");
             Submersible AtlanticExplorer = MyVehicleAssets.model.AddComponent<AtlanticExplorer>() as Submersible;
             VehicleRegistrar.RegisterVehicleLater(AtlanticExplorer);
         }

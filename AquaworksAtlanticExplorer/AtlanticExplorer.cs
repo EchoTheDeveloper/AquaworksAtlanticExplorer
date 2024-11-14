@@ -14,8 +14,6 @@ namespace Aquaworks.AtlanticExplorer
 {
     public class AtlanticExplorer : Submersible
     {
-        VehicleAssets MyVehicleAssets = AssetBundleInterface.GetVehicleAssetsFromBundle("assets/atlanticexplorer", "Atlantic Explorer");
-        
         public override GameObject VehicleModel
         {
             get

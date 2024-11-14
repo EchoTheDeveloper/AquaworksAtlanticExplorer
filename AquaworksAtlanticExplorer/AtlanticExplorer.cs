@@ -133,7 +133,7 @@ namespace Aquaworks.AtlanticExplorer
                 VehicleFramework.VehicleParts.VehicleFloodLight vl1 =
                     new VehicleFramework.VehicleParts.VehicleFloodLight
                     {
-                        Light = transform.Find("lighs_parent/Headlight").gameObject,
+                        Light = transform.Find("lights_parent/Headlight").gameObject,
                         Angle = 70,
                         Color = Color.white,
                         Intensity = 0.6f,
@@ -144,7 +144,7 @@ namespace Aquaworks.AtlanticExplorer
                 VehicleFramework.VehicleParts.VehicleFloodLight vl2 =
                     new VehicleFramework.VehicleParts.VehicleFloodLight
                     {
-                        Light = transform.Find("lighs_parent/Headlight (1)").gameObject,
+                        Light = transform.Find("lights_parent/Headlight (1)").gameObject,
                         Angle = 70,
                         Color = Color.white,
                         Intensity = 0.6f,
@@ -155,7 +155,7 @@ namespace Aquaworks.AtlanticExplorer
                 VehicleFramework.VehicleParts.VehicleFloodLight vl3 =
                     new VehicleFramework.VehicleParts.VehicleFloodLight
                     {
-                        Light = transform.Find("lighs_parent/Headlight (2)").gameObject,
+                        Light = transform.Find("lights_parent/Headlight (2)").gameObject,
                         Angle = 70,
                         Color = Color.white,
                         Intensity = 0.7f,
@@ -166,7 +166,7 @@ namespace Aquaworks.AtlanticExplorer
                 VehicleFramework.VehicleParts.VehicleFloodLight vl4 =
                     new VehicleFramework.VehicleParts.VehicleFloodLight
                     {
-                        Light = transform.Find("lighs_parent/Headlight (3)").gameObject,
+                        Light = transform.Find("lights_parent/Headlight (3)").gameObject,
                         Angle = 70,
                         Color = Color.white,
                         Intensity = 0.7f,
@@ -177,7 +177,7 @@ namespace Aquaworks.AtlanticExplorer
                 VehicleFramework.VehicleParts.VehicleFloodLight vl5 =
                     new VehicleFramework.VehicleParts.VehicleFloodLight
                     {
-                        Light = transform.Find("lighs_parent/Headlight (4)").gameObject,
+                        Light = transform.Find("lights_parent/Headlight (4)").gameObject,
                         Angle = 70,
                         Color = Color.white,
                         Intensity = 0.6f,
@@ -188,7 +188,7 @@ namespace Aquaworks.AtlanticExplorer
                 VehicleFramework.VehicleParts.VehicleFloodLight vl6 =
                     new VehicleFramework.VehicleParts.VehicleFloodLight
                     {
-                        Light = transform.Find("lighs_parent/Headlight (5)").gameObject,
+                        Light = transform.Find("lights_parent/Headlight (5)").gameObject,
                         Angle = 70,
                         Color = Color.white,
                         Intensity = 0.6f,

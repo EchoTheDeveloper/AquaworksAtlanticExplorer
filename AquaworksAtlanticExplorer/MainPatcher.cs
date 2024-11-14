@@ -11,7 +11,7 @@ namespace Aquaworks.AtlanticExplorer
     public class MainPatcher : BaseUnityPlugin
     {
         const string PLUGIN_GUID = "com.echothedeveloper.aquaworks.atlanticexplorer";
-        const string PLUGIN_NAME = "AquaWork's Atlantic Explroer";
+        const string PLUGIN_NAME = "AquaWork's Atlantic Explorer";
         const string PLUGIN_VERSION = "1.0.0";
         public static VehicleAssets MyVehicleAssets;
         public void Start()

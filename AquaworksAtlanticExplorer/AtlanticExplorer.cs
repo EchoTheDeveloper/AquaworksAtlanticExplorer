@@ -1,14 +1,21 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VehicleFramework;
-using VehicleFramework.VehicleTypes;
-using Aquaworks.Core;
 using UnityEngine;
+using VehicleFramework;
 using VehicleFramework.VehicleParts;
+using VehicleFramework.VehicleTypes;
+using System.IO;
+using System.Reflection;
+using UnityEngine.U2D;
+using System.Collections;
+using UWE;
+using static Nautilus.Assets.PrefabTemplates.FabricatorTemplate;
+using UnityEngine.Assertions;
 using VehicleFramework.Assets;
+using VehicleFramework.Engines;
 
 namespace Aquaworks.AtlanticExplorer
 {
@@ -45,11 +52,11 @@ namespace Aquaworks.AtlanticExplorer
             }
         }
 
-        public override GameObject BoundingBox
+        public override BoxCollider BoundingBoxCollider
         {
             get
             {
-                return transform.Find("BoundingBox").gameObject;
+                return transform.Find("BoundingBox").gameObject.GetComponent<BoxCollider>();
             }
         }
 
@@ -58,7 +65,7 @@ namespace Aquaworks.AtlanticExplorer
             get
             {
                 var list = new List<GameObject>();
-                foreach(Transform child in transform.Find("WaterClipProxies"))
+                foreach(Transform child in transform.Find("WaterClipProxy"))
                 {
                     list.Add(child.gameObject);
                 }

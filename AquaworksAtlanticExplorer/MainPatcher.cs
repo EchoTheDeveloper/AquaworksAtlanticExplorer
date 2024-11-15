@@ -3,6 +3,7 @@ using BepInEx;
 using VehicleFramework;
 using VehicleFramework.VehicleTypes;
 using VehicleFramework.Assets;
+using Aquaworks.Core;
 
 namespace Aquaworks.AtlanticExplorer
 {
@@ -19,6 +20,8 @@ namespace Aquaworks.AtlanticExplorer
             MyVehicleAssets = AssetBundleInterface.GetVehicleAssetsFromBundle("assets/atlanticexplorer", "AtlanticExplorer");
             Submersible AtlanticExplorer = MyVehicleAssets.model.AddComponent<AtlanticExplorer>() as Submersible;
             VehicleRegistrar.RegisterVehicleLater(AtlanticExplorer);
+            Initializer initializer = new Initializer();
+            initializer.Initialize("AtlanticExplorer");
         }
     }
 }

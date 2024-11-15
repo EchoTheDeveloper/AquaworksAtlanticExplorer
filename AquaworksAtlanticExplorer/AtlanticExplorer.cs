@@ -25,7 +25,7 @@ namespace Aquaworks.AtlanticExplorer
         {
             get
             {
-                return transform.Find("model").gameObject;
+                return transform.Find("model").parent.gameObject;
             }
         }
 
@@ -233,6 +233,13 @@ namespace Aquaworks.AtlanticExplorer
                 top_vhs.ExitLocation = intHatch.Find("ExitLocation");
                 top_vhs.SurfaceExitLocation = intHatch.Find("ExitLocation");
                 list.Add(top_vhs);
+                
+                VehicleFramework.VehicleParts.VehicleHatchStruct bottom_vhs = new VehicleFramework.VehicleParts.VehicleHatchStruct();
+                Transform intHatch2 = transform.Find("Hatch (1)");
+                bottom_vhs.Hatch = intHatch2.gameObject;
+                bottom_vhs.ExitLocation = intHatch2.Find("ExitLocation");
+                top_vhs.SurfaceExitLocation = intHatch2.Find("ExitLocation");
+                list.Add(bottom_vhs);
 
                 return list;
             }
@@ -247,10 +254,14 @@ namespace Aquaworks.AtlanticExplorer
         public override int CrushDepthUpgrade2 => 1000;
         public override int CrushDepthUpgrade3 => 1500;
         public override string Description => "Explore the deep with the Atlantic Explorer - modified to explore 4546b";
-        public override string EncyclopediaEntry => "The Atlantic Explorer made by Aquaworks Industries for Alterra for the exploration of Planet 6886d in the undiscovered Julie Regions of the galaxy." +
-                                                    "Designed to be a tank to explore the depths of your words - Brought to you by Aquaworks" +
-                                                    "This version of the Atlantic Explorer has been modified to explroe 4546b";
+        public override string EncyclopediaEntry => "The Atlantic Explorer made by Aquaworks Industries for Alterra for the exploration of Planet 6886d in the undiscovered Julie Regions of the galaxy.\n" +
+                                                    "Designed to be a tank to explore the depths of your words - Brought to you by Aquaworks\n" +
+                                                    "This version of the Atlantic Explorer has been modified to explroe 4546b\n" +
+                                                    "\nNote: Alterra taxes AquaWorks at 5 credits per second of use - This tax will be payed by you.";
 
+        public override Sprite EncyclopediaImage =>
+            VehicleFramework.Assets.SpriteHelper.GetSpriteRaw("assets/encyclopedia_image.png");
+        
         public override TechType UnlockedWith => TechType.Cyclops;
         public override Atlas.Sprite PingSprite => null;
 

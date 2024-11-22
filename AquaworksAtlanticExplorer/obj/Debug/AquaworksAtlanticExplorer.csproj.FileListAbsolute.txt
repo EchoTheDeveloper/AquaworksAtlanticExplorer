@@ -1,7 +1,6 @@
 C:\Users\Arda\RiderProjects\AquaworksAtlanticExplorer\AquaworksAtlanticExplorer\bin\Debug\AquaworksAtlanticExplorer.dll
 C:\Users\Arda\RiderProjects\AquaworksAtlanticExplorer\AquaworksAtlanticExplorer\bin\Debug\AquaworksAtlanticExplorer.pdb
 C:\Users\Arda\RiderProjects\AquaworksAtlanticExplorer\AquaworksAtlanticExplorer\bin\Debug\0Harmony.dll
-C:\Users\Arda\RiderProjects\AquaworksAtlanticExplorer\AquaworksAtlanticExplorer\bin\Debug\AquaworksCore.dll
 C:\Users\Arda\RiderProjects\AquaworksAtlanticExplorer\AquaworksAtlanticExplorer\bin\Debug\Assembly-CSharp.dll
 C:\Users\Arda\RiderProjects\AquaworksAtlanticExplorer\AquaworksAtlanticExplorer\bin\Debug\BepInEx.dll
 C:\Users\Arda\RiderProjects\AquaworksAtlanticExplorer\AquaworksAtlanticExplorer\bin\Debug\Nautilus.dll

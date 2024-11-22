@@ -19,7 +19,7 @@ using VehicleFramework.Engines;
 
 namespace Aquaworks.AtlanticExplorer
 {
-    public class AtlanticExplorer : Submersible
+    public class AtlanticExplorer : Submarine
     {
         public override GameObject VehicleModel
         {
@@ -141,10 +141,10 @@ namespace Aquaworks.AtlanticExplorer
                     new VehicleFramework.VehicleParts.VehicleFloodLight
                     {
                         Light = transform.Find("lights_parent/Headlight").gameObject,
-                        Angle = 70,
-                        Color = Color.white,
-                        Intensity = 0.6f,
-                        Range = 80f
+                        Angle = 50,
+                        Color = Color.cyan,
+                        Intensity = 0.8f,
+                        Range = 120f
                     };
                 list.Add(vl1);
 
@@ -152,72 +152,31 @@ namespace Aquaworks.AtlanticExplorer
                     new VehicleFramework.VehicleParts.VehicleFloodLight
                     {
                         Light = transform.Find("lights_parent/Headlight (1)").gameObject,
-                        Angle = 70,
-                        Color = Color.white,
-                        Intensity = 0.6f,
-                        Range = 80f
+                        Angle = 50,
+                        Color = Color.cyan,
+                        Intensity = 0.8f,
+                        Range = 120f
                     };
                 list.Add(vl2);
-                
-                VehicleFramework.VehicleParts.VehicleFloodLight vl3 =
-                    new VehicleFramework.VehicleParts.VehicleFloodLight
-                    {
-                        Light = transform.Find("lights_parent/Headlight (2)").gameObject,
-                        Angle = 70,
-                        Color = Color.white,
-                        Intensity = 0.7f,
-                        Range = 70f
-                    };
-                list.Add(vl3);
-                
-                VehicleFramework.VehicleParts.VehicleFloodLight vl4 =
-                    new VehicleFramework.VehicleParts.VehicleFloodLight
-                    {
-                        Light = transform.Find("lights_parent/Headlight (3)").gameObject,
-                        Angle = 70,
-                        Color = Color.white,
-                        Intensity = 0.7f,
-                        Range = 70f
-                    };
-                list.Add(vl4);
-                
-                VehicleFramework.VehicleParts.VehicleFloodLight vl5 =
-                    new VehicleFramework.VehicleParts.VehicleFloodLight
-                    {
-                        Light = transform.Find("lights_parent/Headlight (4)").gameObject,
-                        Angle = 70,
-                        Color = Color.white,
-                        Intensity = 0.6f,
-                        Range = 70f
-                    };
-                list.Add(vl5);
-                
-                VehicleFramework.VehicleParts.VehicleFloodLight vl6 =
-                    new VehicleFramework.VehicleParts.VehicleFloodLight
-                    {
-                        Light = transform.Find("lights_parent/Headlight (5)").gameObject,
-                        Angle = 70,
-                        Color = Color.white,
-                        Intensity = 0.6f,
-                        Range = 70f
-                    };
-                list.Add(vl6);
 
                 return list;
             }
         }
 
-        public override VehiclePilotSeat PilotSeat
+        public override List<VehiclePilotSeat> PilotSeats
         {
             get
             {
+                var list = new List<VehicleFramework.VehicleParts.VehiclePilotSeat>();
                 VehicleFramework.VehicleParts.VehiclePilotSeat vps = new VehicleFramework.VehicleParts.VehiclePilotSeat();
                 Transform mainSeat = transform.Find("PilotSeat");
                 vps.Seat = mainSeat.gameObject;
-                vps.SitLocation = mainSeat.gameObject;
+                vps.SitLocation = mainSeat.Find("Sit").gameObject;
                 vps.LeftHandLocation = mainSeat;
                 vps.RightHandLocation = mainSeat;
-                return vps;
+                vps.ExitLocation = mainSeat.Find("Exit");
+                list.Add(vps);
+                return list;
             }
         }
 
@@ -232,31 +191,78 @@ namespace Aquaworks.AtlanticExplorer
                 top_vhs.Hatch = intHatch.gameObject;
                 top_vhs.ExitLocation = intHatch.Find("ExitLocation");
                 top_vhs.SurfaceExitLocation = intHatch.Find("ExitLocation");
+                top_vhs.EntryLocation = intHatch.Find("EntryLocation");
                 list.Add(top_vhs);
                 
                 VehicleFramework.VehicleParts.VehicleHatchStruct bottom_vhs = new VehicleFramework.VehicleParts.VehicleHatchStruct();
                 Transform intHatch2 = transform.Find("Hatch (1)");
                 bottom_vhs.Hatch = intHatch2.gameObject;
                 bottom_vhs.ExitLocation = intHatch2.Find("ExitLocation");
-                top_vhs.SurfaceExitLocation = intHatch2.Find("ExitLocation");
+                bottom_vhs.SurfaceExitLocation = intHatch2.Find("ExitLocation");
+                bottom_vhs.EntryLocation = intHatch2.Find("EntryLocation");
                 list.Add(bottom_vhs);
 
                 return list;
             }
         }
 
+        public override List<GameObject> TetherSources
+        {
+            get
+            {
+                var list = new List<GameObject>();
+                foreach (Transform child in transform.Find("Tether-Sources"))
+                {
+                    list.Add(child.gameObject);
+                }
+                return list;
+            }
+        }
+
+        public override GameObject Fabricator
+        {
+            get
+            {
+                return transform.Find("Fabricator-Location").gameObject;
+            }
+        }
+        
+        public override List<Light> InteriorLights
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        public override GameObject ControlPanel
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        public override GameObject ColorPicker
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         public override bool HasArms => false;
-        public override int NumModules => 3;
+        public override int NumModules => 4;
         public override int Mass => 250;
         public override int MaxHealth => 300;
         public override int BaseCrushDepth => 400;
-        public override int CrushDepthUpgrade1 => 800;
-        public override int CrushDepthUpgrade2 => 1000;
-        public override int CrushDepthUpgrade3 => 1500;
+        public override int CrushDepthUpgrade1 => 500;
+        public override int CrushDepthUpgrade2 => 500;
+        public override int CrushDepthUpgrade3 => 850;
         public override string Description => "Explore the deep with the Atlantic Explorer - modified to explore 4546b";
         public override string EncyclopediaEntry => "The Atlantic Explorer made by Aquaworks Industries for Alterra for the exploration of Planet 6886d in the undiscovered Julie Regions of the galaxy.\n" +
                                                     "Designed to be a tank to explore the depths of your words - Brought to you by Aquaworks\n" +
-                                                    "This version of the Atlantic Explorer has been modified to explroe 4546b\n" +
+                                                    "This version of the Atlantic Explorer has been modified to explore 4546b\n" +
                                                     "\nNote: Alterra taxes AquaWorks at 5 credits per second of use - This tax will be payed by you.";
 
         public override Sprite EncyclopediaImage =>
@@ -275,8 +281,8 @@ namespace Aquaworks.AtlanticExplorer
                 recipe.Add(TechType.Lubricant, 1);
                 recipe.Add(TechType.Lead, 2);
                 recipe.Add(TechType.PowerCell, 2);
-                recipe.Add(TechType.Battery, 1);
-                recipe.Add(TechType.TitaniumIngot, 5);
+                recipe.Add(TechType.AdvancedWiringKit, 1);
+                recipe.Add(TechType.TitaniumIngot, 2);
                 recipe.Add(TechType.Copper, 2);
                 recipe.Add(TechType.Glass, 1);
                 recipe.Add(TechType.Silver, 1);
